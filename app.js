@@ -20,8 +20,6 @@ app.get('/', function(req, res){
   res.render('index');
 });
 
-// var db = process.env.MONGODB_URI || 'mongodb://localhost/portfolio';
-
 var mongoose = require('mongoose');
 
 var mongoUrl = process.env.MONGODB_URI || 'mongodb://localhost:27017/portfolio';
