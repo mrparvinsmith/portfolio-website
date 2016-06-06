@@ -20,6 +20,17 @@ app.get('/', function(req, res){
   res.render('index');
 });
 
+// var db = process.env.MONGODB_URI || 'mongodb://localhost/portfolio';
+
+var mongoose = require('mongoose');
+
+var mongoUrl = process.env.MONGODB_URI || 'mongodb://localhost:27017/portfolio';
+
+mongoose.connect(mongoUrl, function(err){
+  if(err) throw err;
+  console.log('database connected');
+});
+
 var port = process.env.PORT || 3000;
 app.listen(port, function(){
   console.log('listening on ' + port);
